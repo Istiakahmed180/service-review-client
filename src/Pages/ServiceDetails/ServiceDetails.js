@@ -4,7 +4,6 @@ import { useLoaderData } from "react-router-dom";
 const ServiceDetails = () => {
   const oneService = useLoaderData();
   const { img, name, details, related } = oneService;
-  console.log(oneService);
   return (
     <section>
       <div className="dark:bg-red-400">
