@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../ContextProvider/ContextProvider";
 
 const Navbar = () => {
+  const { user, signOutUser } = useContext(AuthContext);
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -27,15 +29,31 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <Link>Item 1</Link>
-              </li>
-              <li tabIndex={0}>
-                <Link className="justify-between">Parent</Link>
-              </li>
-              <li>
-                <Link>Item 3</Link>
-              </li>
+              {user ? (
+                <>
+                  <li>
+                    <Link>My Reviews</Link>
+                  </li>
+                  <li>
+                    <Link>Add Service</Link>
+                  </li>
+                  <li>
+                    <Link onClick={signOutUser}>Logout</Link>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <Link to={"/"}>Home</Link>
+                  </li>
+                  <li>
+                    <Link to={"/blog"}>Blog</Link>
+                  </li>
+                  <li>
+                    <Link to={"/login"}>Login</Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
           <Link to="/" className="font-bold normal-case text-xl">
@@ -44,15 +62,31 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">
-            <li>
-              <Link>Item 1</Link>
-            </li>
-            <li tabIndex={0}>
-              <Link>Parent</Link>
-            </li>
-            <li>
-              <Link>Item 3</Link>
-            </li>
+            {user ? (
+              <>
+                <li>
+                  <Link>My Reviews</Link>
+                </li>
+                <li>
+                  <Link>Add Service</Link>
+                </li>
+                <li>
+                  <Link onClick={signOutUser}>Logout</Link>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <Link to={"/"}>Home</Link>
+                </li>
+                <li>
+                  <Link to={"/blog"}>Blog</Link>
+                </li>
+                <li>
+                  <Link to={"/login"}>Login</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <div className="navbar-end">
