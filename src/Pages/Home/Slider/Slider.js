@@ -3,6 +3,9 @@ import React from "react";
 const Slider = () => {
   return (
     <div>
+      <h1 className="font-semibold text-4xl text-center">
+        Wondrous City Tours
+      </h1>
       <div className="carousel w-full lg:w-3/4 mx-auto rounded-xl my-10">
         <div id="slide1" className="carousel-item relative w-full">
           <img

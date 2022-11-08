@@ -8,11 +8,11 @@ const Footer = () => {
         aria-label="Site Footer"
         className="bg-teal-600 text-white lg:grid lg:grid-cols-5 rounded-2xl"
       >
-        <div className="hidden lg:relative lg:col-span-2 lg:block">
+        <div className="hidden lg:relative lg:col-span-2 lg:block ">
           <img
             alt="Art"
             src="https://images.pexels.com/photos/6185777/pexels-photo-6185777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover rounded-l-2xl"
           />
         </div>
 
