@@ -14,6 +14,7 @@ const Signup = () => {
     const password = form.password.value;
 
     signUpUser(email, password);
+    form.reset();
   };
 
   const googleSignInUser = () => {

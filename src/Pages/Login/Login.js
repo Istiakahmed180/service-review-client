@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../ContextProvider/ContextProvider";
 
 const Login = () => {
+  const { logIn, googleSignIn } = useContext(AuthContext);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    handleSignIn(email, password);
+    form.reset();
+  };
+
+  const handleSignIn = (email, password) => {
+    logIn(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const googleSignInUser = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <div>
       <div className="relative flex h-full w-full flex-row-reverse">
@@ -11,7 +42,10 @@ const Login = () => {
               <p className="text-2xl text-center">Log In</p>
             </div>
             <div className="my-6">
-              <button className="flex w-full justify-center rounded-3xl border-none bg-white p-1 text-black hover:bg-gray-200 sm:p-2">
+              <button
+                onClick={googleSignInUser}
+                className="flex w-full justify-center rounded-3xl border-none bg-white p-1 text-black hover:bg-gray-200 sm:p-2"
+              >
                 <img
                   alt=""
                   src="https://freesvg.org/img/1534129544.png"
@@ -28,7 +62,7 @@ const Login = () => {
               </fieldset>
             </div>
             <div className="mt-10">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div>
                   <label
                     className="mb-2.5 block font-extrabold"
@@ -38,7 +72,7 @@ const Login = () => {
                   </label>
                   <input
                     type="email"
-                    id="email"
+                    name="email"
                     className="inline-block w-full rounded-full bg-white p-2.5 leading-none text-black placeholder-indigo-900 shadow placeholder:opacity-30"
                     placeholder="mail@user.com"
                   />
@@ -52,7 +86,7 @@ const Login = () => {
                   </label>
                   <input
                     type="password"
-                    id="email"
+                    name="password"
                     className="inline-block w-full rounded-full bg-white p-2.5 leading-none text-black placeholder-indigo-900 shadow"
                   />
                 </div>
