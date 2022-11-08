@@ -6,7 +6,7 @@ const AllServices = () => {
   const { services } = useLoaderData();
   return (
     <div className="my-10">
-      <h1 className="font-semibold text-4xl text-center">All Services</h1>
+      <h1 className="font-semibold text-4xl text-center mb-10">All Services</h1>
       <div className="grid grid-cols-3 gap-5">
         {services.map((service) => (
           <AllServicesCard

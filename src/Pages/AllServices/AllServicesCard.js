@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const AllServicesCard = ({ services }) => {
-  const { img, name, details, ratings, price } = services;
+  const { img, name, details, ratings, price, _id } = services;
   return (
     <div>
       <div className="w-full max-w-sm bg-white rounded-2xl shadow-2xl dark:bg-gray-800 dark:border-gray-700 mx-auto">
@@ -73,7 +73,10 @@ const AllServicesCard = ({ services }) => {
             <span className="text-3xl font-bold text-gray-900 dark:text-white">
               ${price}
             </span>
-            <Link className="text-white transition-all bg-[#0D9488] hover:bg-[#5b64d6] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <Link
+              to={`/services/${_id}`}
+              className="text-white transition-all bg-[#0D9488] hover:bg-[#5b64d6] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
               Details
             </Link>
           </div>
