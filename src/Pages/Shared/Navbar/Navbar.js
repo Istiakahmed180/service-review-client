@@ -38,6 +38,9 @@ const Navbar = () => {
                     <Link>Add Service</Link>
                   </li>
                   <li>
+                    <Link to={"/blog"}>Blog</Link>
+                  </li>
+                  <li>
                     <Link onClick={signOutUser}>Logout</Link>
                   </li>
                 </>
@@ -69,6 +72,9 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link>Add Service</Link>
+                </li>
+                <li>
+                  <Link to={"/blog"}>Blog</Link>
                 </li>
                 <li>
                   <Link onClick={signOutUser}>Logout</Link>

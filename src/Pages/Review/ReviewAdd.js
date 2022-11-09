@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../ContextProvider/ContextProvider";
 
 const ReviewAdd = () => {
@@ -128,7 +128,7 @@ const ReviewAdd = () => {
                   type="submit"
                   className="px-4 py-2 border rounded-md dark:border-gray-100"
                 >
-                  Change
+                  Add
                 </button>
               </div>
             </div>
