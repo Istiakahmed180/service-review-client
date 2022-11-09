@@ -5,7 +5,17 @@ import { AuthContext } from "../../ContextProvider/ContextProvider";
 const ServiceDetails = () => {
   const { user } = useContext(AuthContext);
   const oneService = useLoaderData();
-  const { img, name, details, related, review, ratings, _id } = oneService;
+  const {
+    img,
+    name,
+    details,
+    related,
+    review,
+    ratings,
+    _id,
+    reviewerImg,
+    reviewerName,
+  } = oneService;
   return (
     <div>
       <section>
@@ -35,7 +45,7 @@ const ServiceDetails = () => {
             <div>
               {user ? (
                 <img
-                  src={user?.photoURL}
+                  src={reviewerImg}
                   alt=""
                   className="object-cover w-12 h-12 rounded-full dark:bg-gray-500"
                 />
@@ -48,7 +58,7 @@ const ServiceDetails = () => {
               )}
             </div>
             <div>
-              <h4 className="font-bold">{user?.displayName}</h4>
+              <h4 className="font-bold">{reviewerName}</h4>
               <span className="text-xs dark:text-gray-400">2 days ago</span>
             </div>
           </div>
