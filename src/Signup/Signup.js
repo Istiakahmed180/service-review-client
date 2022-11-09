@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../ContextProvider/ContextProvider";
 
 const Signup = () => {
-  const { signUp, googleSignIn } = useContext(AuthContext);
+  const { signUp, googleSignIn, updateProfileUser } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -13,7 +13,7 @@ const Signup = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    signUpUser(email, password);
+    signUpUser(email, password, name);
     form.reset();
   };
 
@@ -26,12 +26,22 @@ const Signup = () => {
       .catch((error) => console.error(error));
   };
 
-  const signUpUser = (email, password) => {
+  const signUpUser = (email, password, name) => {
     signUp(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        updateProfile(name);
       })
+      .catch((error) => console.error(error));
+  };
+
+  const updateProfile = (name) => {
+    const profile = {
+      displayName: name,
+    };
+    updateProfileUser(profile)
+      .then(() => console.log("Display Name Updated"))
       .catch((error) => console.error(error));
   };
 

@@ -115,7 +115,11 @@ const ReviewAdd = () => {
                 {user ? (
                   <>
                     <img
-                      src={user?.photoURL}
+                      src={
+                        user?.photoURL
+                          ? user?.photoURL
+                          : "https://source.unsplash.com/40x40/?portrait?4"
+                      }
                       alt=""
                       className="w-10 h-10 rounded-full dark:bg-gray-500 dark:bg-gray-700"
                     />

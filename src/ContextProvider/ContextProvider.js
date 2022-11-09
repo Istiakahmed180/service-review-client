@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 
@@ -37,6 +38,10 @@ const ContextProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  const updateProfileUser = (profile) => {
+    return updateProfile(auth.currentUser, profile);
+  };
+
   useEffect(() => {
     const unSubscribed = onAuthStateChanged(auth, (currentUser) => {
       console.log(currentUser);
@@ -49,7 +54,15 @@ const ContextProvider = ({ children }) => {
   }, []);
   return (
     <AuthContext.Provider
-      value={{ googleSignIn, signUp, logIn, signOutUser, user, loading }}
+      value={{
+        googleSignIn,
+        signUp,
+        logIn,
+        signOutUser,
+        user,
+        loading,
+        updateProfileUser,
+      }}
     >
       {children}
     </AuthContext.Provider>
