@@ -40,6 +40,9 @@ const ReviewsInfo = () => {
   };
   return (
     <div>
+      <h1 className="text-center text-red-400 font-semibold text-2xl">
+        {reviews.length === 0 && "No Reviews Were Added"}
+      </h1>
       <ToastContainer />
       <div className="overflow-x-auto relative shadow-md sm:rounded-lg my-10">
         <div className="flex justify-between items-center pb-4 bg-white dark:bg-gray-900"></div>
