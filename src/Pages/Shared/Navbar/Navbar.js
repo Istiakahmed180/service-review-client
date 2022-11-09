@@ -32,7 +32,7 @@ const Navbar = () => {
               {user ? (
                 <>
                   <li>
-                    <Link>My Reviews</Link>
+                    <Link to={"/reviews"}>My Reviews</Link>
                   </li>
                   <li>
                     <Link>Add Service</Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
             {user ? (
               <>
                 <li>
-                  <Link>My Reviews</Link>
+                  <Link to={"/reviews"}>My Reviews</Link>
                 </li>
                 <li>
                   <Link>Add Service</Link>
