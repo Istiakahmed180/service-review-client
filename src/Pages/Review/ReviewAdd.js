@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../ContextProvider/ContextProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ReviewAdd = () => {
   const { user } = useContext(AuthContext);
@@ -33,7 +35,9 @@ const ReviewAdd = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-          alert("Review Added Successfully");
+          toast.success("Review Added Successfully", {
+            position: toast.POSITION.TOP_CENTER,
+          });
         }
         form.reset();
       });
@@ -41,6 +45,7 @@ const ReviewAdd = () => {
 
   return (
     <div>
+      <ToastContainer />
       <section className="p-6 dark:bg-gray-800 dark:text-gray-50">
         <form
           onSubmit={handleSubmit}

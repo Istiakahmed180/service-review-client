@@ -18,7 +18,6 @@ const ReviewShow = ({ review, handleDelete }) => {
 
   return (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-      <h1>review:{userService.length}</h1>
       <td className="p-4 w-4">
         <div className="flex items-center">
           <button
