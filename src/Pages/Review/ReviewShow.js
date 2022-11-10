@@ -8,7 +8,9 @@ const ReviewShow = ({ review, handleDelete }) => {
   const { customerName, serviceName, text, _id, service } = review;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/services/${service}`)
+    fetch(
+      `https://assignment-project-server-ten.vercel.app/services/${service}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
