@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../ContextProvider/ContextProvider";
+import { FaUserGraduate } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
@@ -96,7 +97,15 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link className="btn">Get started</Link>
+          {user ? (
+            <img
+              alt=""
+              className="w-12 h-12 border rounded-full dark:bg-gray-500 dark:border-gray-700"
+              src={user?.photoURL}
+            />
+          ) : (
+            <FaUserGraduate></FaUserGraduate>
+          )}
         </div>
       </div>
     </div>
