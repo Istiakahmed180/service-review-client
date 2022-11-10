@@ -47,11 +47,11 @@ const Signup = () => {
 
   return (
     <div>
-      <div className="relative flex h-full w-full flex-row-reverse">
-        <div className="h-screen w-1/2 bg-black">
+      <div className="relative flex h-full w-full flex-col lg:flex-row-reverse">
+        <div className="h-screen lg:w-1/2 w-full bg-black">
           <div className="mx-auto flex h-full w-2/3 flex-col justify-center text-white xl:w-1/2">
             <div>
-              <p className="text-2xl text-center">Sign Up</p>
+              <p className="text-2xl text-center mt-10">Sign Up</p>
             </div>
             <div className="my-6">
               <button
@@ -140,7 +140,7 @@ const Signup = () => {
             </div>
           </div>
         </div>
-        <div className="h-screen w-1/2 bg-blue-600">
+        <div className="h-screen lg:w-1/2 w-full bg-blue-600">
           <img
             alt=""
             src="https://images.pexels.com/photos/2523959/pexels-photo-2523959.jpeg"

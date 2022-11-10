@@ -7,7 +7,7 @@ const ServiceOffered = () => {
         <h1 className="mb-10 uppercase text-[#0D9488] text-4xl font-semibold text-center">
           Services Offered
         </h1>
-        <div className="grid gap-8 row-gap-5 sm:row-gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 row-gap-5 sm:row-gap-8 grid-cols-2 lg:grid-cols-3">
           <div>
             <div className="flex items-center justify-center w-10 h-10 mb-4 rounded-full bg-indigo-50">
               <svg
